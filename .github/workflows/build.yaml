@@ -15,7 +15,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [ 22 ]
+        node-version: [22]
+
     steps:
       - name: Code Checkout
         uses: actions/checkout@v4
@@ -28,6 +29,18 @@ jobs:
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
-      - run: yarn tsc
-      - run: yarn lint
-      - run: yarn build:production
+
+      - name: TypeScript check
+        run: yarn tsc
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Build UI
+        run: yarn build:production
+
+      - name: Upload UI assets
+        uses: actions/upload-artifact@v4
+        with:
+          name: panel-assets
+          path: public/assets
