@@ -1,9 +1,10 @@
 name: Build
 
 on:
-  pull_request:
+  push:
     branches:
       - release/v1.12.0
+  workflow_dispatch:
 
 jobs:
   ui:
