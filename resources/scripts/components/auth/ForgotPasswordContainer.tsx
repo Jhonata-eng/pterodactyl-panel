@@ -76,9 +76,7 @@ export default () => {
                     <Field
                         light
                         label={'E-mail'}
-                        description={
-                            'Digite seu e-mail cadastrado para receber instruções de como resetar sua senha.'
-                        }
+                        description={'Digite seu e-mail cadastrado para receber instruções de como resetar sua senha.'}
                         name={'email'}
                         type={'email'}
                     />
