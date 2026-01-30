@@ -53,7 +53,7 @@ export default () => {
             {rootAdmin && (
                 <div css={tw`mb-2 flex justify-end items-center`}>
                     <p css={tw`uppercase text-xs text-neutral-400 mr-2`}>
-                        {showOnlyAdmin ? "Mostrando todos os servidores" : 'Mostrando seus servidores'}
+                        {showOnlyAdmin ? 'Mostrando todos os servidores' : 'Mostrando seus servidores'}
                     </p>
                     <Switch
                         name={'show_all_servers'}
