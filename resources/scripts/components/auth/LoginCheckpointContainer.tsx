@@ -35,7 +35,7 @@ const LoginCheckpointContainer = () => {
                     title={isMissingDevice ? 'Recovery Code' : 'Authentication Code'}
                     description={
                         isMissingDevice
-                            ? 'Digite um dos códigos de recuperação gerados ao configurar a autenticação 2FA na sua conta para continuar.'
+                            ? 'Para continuar, digite um dos códigos de recuperação gerados ao ativar a autenticação 2FA na sua conta.'
                             : 'Digite o código 2FA gerado no seu dispositivo.'
                     }
                     type={'text'}
@@ -65,7 +65,7 @@ const LoginCheckpointContainer = () => {
                     to={'/auth/login'}
                     css={tw`text-xs text-neutral-500 tracking-wide uppercase no-underline hover:text-neutral-700`}
                 >
-                    Voltar ao Login
+                    Voltar ao login
                 </Link>
             </div>
         </LoginFormContainer>
