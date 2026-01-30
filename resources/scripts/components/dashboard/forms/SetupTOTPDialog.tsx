@@ -74,8 +74,8 @@ const ConfigureTwoFactorForm = ({ onTokens }: Props) => {
                 </p>
             </CopyOnClick>
             <p id={'totp-code-description'} className={'mt-6'}>
-                Escaneie o código QR acima usando o aplicativo de autenticação em duas etapas de sua preferência. Em seguida, insira
-                o código de 6 dígitos gerado no campo abaixo.
+                Escaneie o código QR acima usando o aplicativo de autenticação em duas etapas de sua preferência.
+                Em seguida, insira o código de 6 dígitos gerado no campo abaixo.
             </p>
             <Input.Text
                 aria-labelledby={'totp-code-description'}
@@ -126,5 +126,5 @@ const ConfigureTwoFactorForm = ({ onTokens }: Props) => {
 export default asDialog({
     title: 'Ativar autenticação 2FA',
     description:
-        "Ajude a proteger sua conta contra acessos não autorizados. Você precisará inserir um código de verificação sempre que fizer login.",
+        'Ajude a proteger sua conta contra acessos não autorizados. Você precisará inserir um código de verificação sempre que fizer login.',
 })(ConfigureTwoFactorForm);

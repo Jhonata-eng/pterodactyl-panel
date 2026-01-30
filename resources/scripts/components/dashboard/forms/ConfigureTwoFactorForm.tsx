@@ -33,8 +33,7 @@ export default () => {
             <p css={tw`text-sm`}>
                 {isEnabled
                     ? 'A autenticação 2FA está ativada na sua conta.'
-                    : 'Atualmente a sua conta não possui autenticação 2FA ativa. Clique no botão abaixo para iniciar a configuração.'
-                }
+                    : 'Atualmente a sua conta não possui autenticação 2FA ativa. Clique no botão abaixo para iniciar a configuração.'}
             </p>
             <div css={tw`mt-6`}>
                 {isEnabled ? (

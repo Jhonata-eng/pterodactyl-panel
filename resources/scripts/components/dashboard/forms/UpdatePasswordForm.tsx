@@ -20,11 +20,9 @@ const schema = Yup.object().shape({
     current: Yup.string().min(1).required('Você deve fornecer sua senha atual.'),
     password: Yup.string().min(8).required(),
     confirmPassword: Yup.string().test(
-        'password',
-        'As senhas informadas não coincidem.',
+        'password', 'As senhas informadas não coincidem.',
         function (value) {
-            return value === this.parent.password;
-        }
+            return value === this.parent.password;}
     ),
 });
 
@@ -77,9 +75,7 @@ export default () => {
                                     type={'password'}
                                     name={'password'}
                                     label={'Nova senha'}
-                                    description={
-                                        'Sua nova senha deve ter pelo menos 8 caracteres.'
-                                    }
+                                    description={'Sua nova senha deve ter pelo menos 8 caracteres.'}
                                 />
                             </div>
                             <div css={tw`mt-6`}>
