@@ -19,11 +19,9 @@ interface Values {
 const schema = Yup.object().shape({
     current: Yup.string().min(1).required('Você deve fornecer sua senha atual.'),
     password: Yup.string().min(8).required(),
-    confirmPassword: Yup.string().test(
-        'password', 'As senhas informadas não coincidem.',
-        function (value) {
-            return value === this.parent.password;}
-    ),
+    confirmPassword: Yup.string().test('password', 'As senhas informadas não coincidem.', function (value) {
+        return value === this.parent.password;
+    }),
 });
 
 export default () => {
@@ -63,12 +61,7 @@ export default () => {
                     <React.Fragment>
                         <SpinnerOverlay size={'large'} visible={isSubmitting} />
                         <Form css={tw`m-0`}>
-                            <Field
-                                id={'current_password'}
-                                type={'password'}
-                                name={'current'}
-                                label={'Senha atual'}
-                            />
+                            <Field id={'current_password'} type={'password'} name={'current'} label={'Senha atual'} />
                             <div css={tw`mt-6`}>
                                 <Field
                                     id={'new_password'}

@@ -135,8 +135,8 @@ export default ({ backup }: Props) => {
                 onConfirmed={() => doRestorationAction()}
             >
                 <p>
-                    Seu servidor será desligado. Você não poderá controlar o mesmo, acessar
-                    o gerenciador de arquivos ou criar backups adicionais até que o processo seja concluído.
+                    Seu servidor será desligado. Você não poderá controlar o mesmo, acessar o gerenciador de arquivos ou
+                    criar backups adicionais até que o processo seja concluído.
                 </p>
                 <p css={tw`mt-4 -mb-2 bg-gray-700 p-3 rounded`}>
                     <label htmlFor={'restore_truncate'} css={tw`text-base flex items-center cursor-pointer`}>

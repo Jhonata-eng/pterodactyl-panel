@@ -54,7 +54,9 @@ const ModalContent = ({ ...props }: RequiredModalProps) => {
                         <FormikSwitch
                             name={'isLocked'}
                             label={'Trancado'}
-                            description={'Impede que este backup seja excluído até que seja explicitamente desbloqueado.'}
+                            description={
+                                'Impede que este backup seja excluído até que seja explicitamente desbloqueado.'
+                            }
                         />
                     </div>
                 </Can>
