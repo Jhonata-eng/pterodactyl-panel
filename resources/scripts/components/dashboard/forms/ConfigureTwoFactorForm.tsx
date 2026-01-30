@@ -34,7 +34,8 @@ export default () => {
                 {isEnabled
                     ? 'A autenticação 2FA está ativada na sua conta.'
                     : 'Atualmente a sua conta não possui autenticação 2FA ativa. Clique no botão abaixo para iniciar a configuração.'
-                    </p>
+                }
+            </p>
             <div css={tw`mt-6`}>
                 {isEnabled ? (
                     <Button.Danger onClick={() => setVisible('disable')}>Desativar 2FA</Button.Danger>
