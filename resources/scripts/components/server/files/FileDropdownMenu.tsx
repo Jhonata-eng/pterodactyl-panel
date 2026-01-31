@@ -132,8 +132,8 @@ const FileDropdownMenu = ({ file }: { file: FileObject }) => {
             <Dialog.Confirm
                 open={showConfirmation}
                 onClose={() => setShowConfirmation(false)}
-                title={`Delete ${file.isFile ? 'File' : 'Directory'}`}
-                confirm={'Delete'}
+                title={`Deletar ${file.isFile ? 'arquivo' : 'pasta'}`}
+                confirm={'Excluir'}
                 onConfirmed={doDeletion}
             >
                 Você não poderá recuperar o conteúdo de&nbsp;
@@ -182,10 +182,10 @@ const FileDropdownMenu = ({ file }: { file: FileObject }) => {
                     </Can>
                 ) : (
                     <Can action={'file.archive'}>
-                        <Row onClick={doArchive} icon={faFileArchive} title={'Arquivo'} />
+                        <Row onClick={doArchive} icon={faFileArchive} title={'Arquivar'} />
                     </Can>
                 )}
-                {file.isFile && <Row onClick={doDownload} icon={faFileDownload} title={'Download'} />}
+                {file.isFile && <Row onClick={doDownload} icon={faFileDownload} title={'Baixar'} />}
                 <Can action={'file.delete'}>
                     <Row onClick={() => setShowConfirmation(true)} icon={faTrashAlt} title={'Deletar'} $danger />
                 </Can>

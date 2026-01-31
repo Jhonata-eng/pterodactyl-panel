@@ -73,7 +73,7 @@ const NewDirectoryDialog = asDialog({
                     <Form css={tw`m-0`}>
                         <Field autoFocus id={'directoryName'} name={'directoryName'} label={'Nome'} />
                         <p css={tw`mt-2 text-sm md:text-base break-all`}>
-                            <span css={tw`text-neutral-200`}>Esse diretório será criado como&nbsp;</span>
+                            <span css={tw`text-neutral-200`}>Esse diretório será criado em&nbsp;</span>
                             <Code>
                                 /home/container/
                                 <span css={tw`text-cyan-200`}>
