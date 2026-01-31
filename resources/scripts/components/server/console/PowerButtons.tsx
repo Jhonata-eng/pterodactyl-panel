@@ -42,11 +42,11 @@ export default ({ className }: PowerButtonProps) => {
                 open={open}
                 hideCloseIcon
                 onClose={() => setOpen(false)}
-                title={'Forcibly Stop Process'}
-                confirm={'Continue'}
+                title={'Forçar parada'}
+                confirm={'Continuar'}
                 onConfirmed={onButtonClick.bind(this, 'kill-confirmed')}
             >
-                Forcibly stopping a server can lead to data corruption.
+                A interrupção forçada de um servidor pode levar à corrupção de dados.
             </Dialog.Confirm>
             <Can action={'control.start'}>
                 <Button
