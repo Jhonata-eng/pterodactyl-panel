@@ -77,11 +77,11 @@ const AllocationRow = ({ allocation }: Props) => {
                             <Code dark>{ip(allocation.ip)}</Code>
                         </CopyOnClick>
                     )}
-                    <Label>{allocation.alias ? 'Hostname' : 'IP Address'}</Label>
+                    <Label>{allocation.alias ? 'Nome do host' : 'Endereço IP'}</Label>
                 </div>
                 <div className={'w-16 md:w-24 overflow-hidden'}>
                     <Code dark>{allocation.port}</Code>
-                    <Label>Port</Label>
+                    <Label>Porta</Label>
                 </div>
             </div>
             <div className={'mt-4 w-full md:mt-0 md:flex-1 md:w-auto'}>
@@ -97,7 +97,7 @@ const AllocationRow = ({ allocation }: Props) => {
             <div className={'flex justify-end space-x-4 mt-4 w-full md:mt-0 md:w-48'}>
                 {allocation.isDefault ? (
                     <Button size={Button.Sizes.Small} className={'!text-gray-50 !bg-blue-600'} disabled>
-                        Primary
+                        Primário
                     </Button>
                 ) : (
                     <>
@@ -106,7 +106,7 @@ const AllocationRow = ({ allocation }: Props) => {
                         </Can>
                         <Can action={'allocation.update'}>
                             <Button.Text size={Button.Sizes.Small} onClick={setPrimaryAllocation}>
-                                Make Primary
+                                Tornar primário
                             </Button.Text>
                         </Can>
                     </>

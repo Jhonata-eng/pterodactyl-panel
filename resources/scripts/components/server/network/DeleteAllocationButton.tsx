@@ -43,7 +43,7 @@ const DeleteAllocationButton = ({ allocation }: Props) => {
                 confirm={'Delete'}
                 onConfirmed={deleteAllocation}
             >
-                This allocation will be immediately removed from your server.
+                Essa alocação será removida imediatamente do seu servidor.
             </Dialog.Confirm>
             <Button.Danger
                 variant={Button.Variants.Secondary}
