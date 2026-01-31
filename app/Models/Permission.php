@@ -100,113 +100,112 @@ class Permission extends Model
      */
     protected static array $permissions = [
         'websocket' => [
-            'description' => 'Allows the user to connect to the server websocket, giving them access to view console output and realtime server stats.',
+            'description' => 'Permite que o usuário se conecte ao websocket do servidor, dando acesso à visualização do console e estatísticas em tempo real.',
             'keys' => [
-                'connect' => 'Allows a user to connect to the websocket instance for a server to stream the console.',
+                'connect' => 'Permite que o usuário se conecte ao websocket do servidor para visualizar o console.',
             ],
         ],
 
         'control' => [
-            'description' => 'Permissions that control a user\'s ability to control the power state of a server, or send commands.',
+            'description' => 'Permissões que controlam a capacidade do usuário de gerenciar o estado de energia do servidor ou enviar comandos.',
             'keys' => [
-                'console' => 'Allows a user to send commands to the server instance via the console.',
-                'start' => 'Allows a user to start the server if it is stopped.',
-                'stop' => 'Allows a user to stop a server if it is running.',
-                'restart' => 'Allows a user to perform a server restart. This allows them to start the server if it is offline, but not put the server in a completely stopped state.',
+                'console' => 'Permite que o usuário envie comandos ao servidor através do console.',
+                'start' => 'Permite que o usuário inicie o servidor caso ele esteja parado.',
+                'stop' => 'Permite que o usuário desligue o servidor caso ele esteja em execução.',
+                'restart' => 'Permite que o usuário reinicie o servidor. Isso permite iniciar o servidor caso esteja offline, mas não colocá-lo em estado totalmente parado.',
             ],
         ],
 
         'user' => [
-            'description' => 'Permissions that allow a user to manage other subusers on a server. They will never be able to edit their own account, or assign permissions they do not have themselves.',
+            'description' => 'Permissões que permitem ao usuário gerenciar outros subusuários no servidor. Ele nunca poderá editar sua própria conta ou atribuir permissões que não possui.',
             'keys' => [
-                'create' => 'Allows a user to create new subusers for the server.',
-                'read' => 'Allows the user to view subusers and their permissions for the server.',
-                'update' => 'Allows a user to modify other subusers.',
-                'delete' => 'Allows a user to delete a subuser from the server.',
+                'create' => 'Permite que o usuário crie novos subusuários para o servidor.',
+                'read' => 'Permite que o usuário visualize os subusuários e suas permissões.',
+                'update' => 'Permite que o usuário modifique outros subusuários.',
+                'delete' => 'Permite que o usuário remova um subusuário do servidor.',
             ],
         ],
 
         'file' => [
-            'description' => 'Permissions that control a user\'s ability to modify the filesystem for this server.',
+            'description' => 'Permissões que controlam a capacidade do usuário de gerenciar o sistema de arquivos do servidor.',
             'keys' => [
-                'create' => 'Allows a user to create additional files and folders via the Panel or direct upload.',
-                'read' => 'Allows a user to view the contents of a directory, but not view the contents of or download files.',
-                'read-content' => 'Allows a user to view the contents of a given file. This will also allow the user to download files.',
-                'update' => 'Allows a user to update the contents of an existing file or directory.',
-                'delete' => 'Allows a user to delete files or directories.',
-                'archive' => 'Allows a user to archive the contents of a directory as well as decompress existing archives on the system.',
-                'sftp' => 'Allows a user to connect to SFTP and manage server files using the other assigned file permissions.',
+                'create' => 'Permite que o usuário crie arquivos e pastas pelo painel ou upload direto.',
+                'read' => 'Permite visualizar o conteúdo de diretórios, mas não visualizar ou baixar arquivos.',
+                'read-content' => 'Permite visualizar o conteúdo de arquivos e baixá-los.',
+                'update' => 'Permite editar o conteúdo de arquivos ou diretórios existentes.',
+                'delete' => 'Permite excluir arquivos ou diretórios.',
+                'archive' => 'Permite compactar diretórios e extrair arquivos compactados.',
+                'sftp' => 'Permite conexão via SFTP para gerenciamento de arquivos.',
             ],
         ],
 
         'backup' => [
-            'description' => 'Permissions that control a user\'s ability to generate and manage server backups.',
+            'description' => 'Permissões que controlam a capacidade do usuário de criar e gerenciar backups do servidor.',
             'keys' => [
-                'create' => 'Allows a user to create new backups for this server.',
-                'read' => 'Allows a user to view all backups that exist for this server.',
-                'delete' => 'Allows a user to remove backups from the system.',
-                'download' => 'Allows a user to download a backup for the server. Danger: this allows a user to access all files for the server in the backup.',
-                'restore' => 'Allows a user to restore a backup for the server. Danger: this allows the user to delete all of the server files in the process.',
+                'create' => 'Permite criar novos backups.',
+                'read' => 'Permite visualizar os backups existentes.',
+                'delete' => 'Permite remover backups do sistema.',
+                'download' => 'Permite baixar backups do servidor. Atenção: isso concede acesso a todos os arquivos contidos no backup.',
+                'restore' => 'Permite restaurar um backup. Atenção: isso apagará todos os arquivos atuais do servidor.',
             ],
         ],
 
-        // Controls permissions for editing or viewing a server's allocations.
         'allocation' => [
-            'description' => 'Permissions that control a user\'s ability to modify the port allocations for this server.',
+            'description' => 'Permissões que controlam a capacidade do usuário de gerenciar as alocações de portas do servidor.',
             'keys' => [
-                'read' => 'Allows a user to view all allocations currently assigned to this server. Users with any level of access to this server can always view the primary allocation.',
-                'create' => 'Allows a user to assign additional allocations to the server.',
-                'update' => 'Allows a user to change the primary server allocation and attach notes to each allocation.',
-                'delete' => 'Allows a user to delete an allocation from the server.',
+                'read' => 'Permite visualizar todas as alocações atribuídas ao servidor.',
+                'create' => 'Permite adicionar novas alocações ao servidor.',
+                'update' => 'Permite alterar a alocação principal e adicionar notas.',
+                'delete' => 'Permite remover uma alocação do servidor.',
             ],
         ],
 
-        // Controls permissions for editing or viewing a server's startup parameters.
         'startup' => [
-            'description' => 'Permissions that control a user\'s ability to view this server\'s startup parameters.',
+            'description' => 'Permissões que controlam o acesso do usuário às configurações de inicialização do servidor.',
             'keys' => [
-                'read' => 'Allows a user to view the startup variables for a server.',
-                'update' => 'Allows a user to modify the startup variables for the server.',
-                'docker-image' => 'Allows a user to modify the Docker image used when running the server.',
+                'read' => 'Permite visualizar as variáveis de inicialização.',
+                'update' => 'Permite modificar as variáveis de inicialização.',
+                'docker-image' => 'Permite alterar a imagem Docker utilizada pelo servidor.',
             ],
         ],
 
         'database' => [
-            'description' => 'Permissions that control a user\'s access to the database management for this server.',
+            'description' => 'Permissões que controlam o acesso do usuário ao gerenciamento de bancos de dados do servidor.',
             'keys' => [
-                'create' => 'Allows a user to create a new database for this server.',
-                'read' => 'Allows a user to view the database associated with this server.',
-                'update' => 'Allows a user to rotate the password on a database instance. If the user does not have the view_password permission they will not see the updated password.',
-                'delete' => 'Allows a user to remove a database instance from this server.',
-                'view_password' => 'Allows a user to view the password associated with a database instance for this server.',
+                'create' => 'Permite criar um novo banco de dados.',
+                'read' => 'Permite visualizar o banco de dados do servidor.',
+                'update' => 'Permite alterar a senha do banco de dados.',
+                'delete' => 'Permite remover um banco de dados do servidor.',
+                'view_password' => 'Permite visualizar a senha do banco de dados.',
             ],
         ],
 
         'schedule' => [
-            'description' => 'Permissions that control a user\'s access to the schedule management for this server.',
+            'description' => 'Permissões que controlam o acesso do usuário ao gerenciamento de agendamentos do servidor.',
             'keys' => [
-                'create' => 'Allows a user to create new schedules for this server.', // task.create-schedule
-                'read' => 'Allows a user to view schedules and the tasks associated with them for this server.', // task.view-schedule, task.list-schedules
-                'update' => 'Allows a user to update schedules and schedule tasks for this server.', // task.edit-schedule, task.queue-schedule, task.toggle-schedule
-                'delete' => 'Allows a user to delete schedules for this server.', // task.delete-schedule
+                'create' => 'Permite criar novos agendamentos.',
+                'read' => 'Permite visualizar os agendamentos e tarefas.',
+                'update' => 'Permite editar agendamentos e tarefas.',
+                'delete' => 'Permite remover agendamentos.',
             ],
         ],
 
         'settings' => [
-            'description' => 'Permissions that control a user\'s access to the settings for this server.',
+            'description' => 'Permissões que controlam o acesso do usuário às configurações do servidor.',
             'keys' => [
-                'rename' => 'Allows a user to rename this server and change the description of it.',
-                'reinstall' => 'Allows a user to trigger a reinstall of this server.',
+                'rename' => 'Permite renomear o servidor e alterar sua descrição.',
+                'reinstall' => 'Permite reinstalar o servidor.',
             ],
         ],
 
         'activity' => [
-            'description' => 'Permissions that control a user\'s access to the server activity logs.',
+            'description' => 'Permissões que controlam o acesso do usuário aos registros de atividade do servidor.',
             'keys' => [
-                'read' => 'Allows a user to view the activity logs for the server.',
+                'read' => 'Permite visualizar os logs de atividade do servidor.',
             ],
         ],
     ];
+
 
     /**
      * Returns all the permissions available on the system for a user to

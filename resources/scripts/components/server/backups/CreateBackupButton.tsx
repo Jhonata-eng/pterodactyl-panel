@@ -53,7 +53,7 @@ const ModalContent = ({ ...props }: RequiredModalProps) => {
                     <div css={tw`mt-6 bg-neutral-700 border border-neutral-800 shadow-inner p-4 rounded`}>
                         <FormikSwitch
                             name={'isLocked'}
-                            label={'Trancado'}
+                            label={'Bloqueado'}
                             description={
                                 'Impede que este backup seja excluído até que seja explicitamente desbloqueado.'
                             }

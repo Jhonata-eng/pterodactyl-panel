@@ -90,7 +90,7 @@ const EditScheduleModal = ({ schedule }: Props) => {
         >
             {({ isSubmitting }) => (
                 <Form>
-                    <h3 css={tw`text-2xl mb-6`}>{schedule ? 'Editar agendamento' : 'Criar novo agendamento'}</h3>
+                    <h3 css={tw`text-2xl mb-6`}>{schedule ? 'Editar agendamento' : 'Agendar nova tarefa'}</h3>
                     <FlashMessageRender byKey={'schedule:edit'} css={tw`mb-6`} />
                     <Field
                         name={'name'}
@@ -112,8 +112,8 @@ const EditScheduleModal = ({ schedule }: Props) => {
                     <div css={tw`mt-6 bg-neutral-700 border border-neutral-800 shadow-inner p-4 rounded`}>
                         <Switch
                             name={'show_cheatsheet'}
-                            description={'Mostre o guia de referência rápida do cron para alguns exemplos.'}
-                            label={'Mostrar folha de dicas'}
+                            description={'Mostre o guia de referência rápida do Cron com alguns exemplos.'}
+                            label={'Mostrar dicas'}
                             defaultChecked={showCheatsheet}
                             onChange={() => setShowCheetsheet((s) => !s)}
                         />
@@ -139,7 +139,7 @@ const EditScheduleModal = ({ schedule }: Props) => {
                     </div>
                     <div css={tw`mt-6 text-right`}>
                         <Button className={'w-full sm:w-auto'} type={'submit'} disabled={isSubmitting}>
-                            {schedule ? 'Salvar mudanças' : 'Criar agendamento'}
+                            {schedule ? 'Salvar mudanças' : 'Agendar tarefa'}
                         </Button>
                     </div>
                 </Form>

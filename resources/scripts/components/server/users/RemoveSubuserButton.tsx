@@ -36,8 +36,8 @@ export default ({ subuser }: { subuser: Subuser }) => {
     return (
         <>
             <ConfirmationModal
-                title={'Excluir esse sub-usuário?'}
-                buttonText={'Sim, remover sub-usuário'}
+                title={'Excluir esse subusuário?'}
+                buttonText={'Sim, remover subusuário'}
                 visible={showConfirmation}
                 showSpinnerOverlay={loading}
                 onConfirmed={() => doDeletion()}
@@ -48,7 +48,7 @@ export default ({ subuser }: { subuser: Subuser }) => {
             </ConfirmationModal>
             <button
                 type={'button'}
-                aria-label={'Excluir sub-usuário'}
+                aria-label={'Excluir subusuário'}
                 css={tw`block text-sm p-2 text-neutral-500 hover:text-red-600 transition-colors duration-150`}
                 onClick={() => setShowConfirmation(true)}
             >

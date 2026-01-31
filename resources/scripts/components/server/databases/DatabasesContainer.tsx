@@ -56,7 +56,7 @@ export default () => {
                             <p css={tw`text-center text-sm text-neutral-300`}>
                                 {databaseLimit > 0
                                     ? 'Parece que você não tem nenhum banco de dados.'
-                                    : 'Não é possível criar bancos de dados para este servidor.'}
+                                    : 'Não é possível criar banco de dados para este servidor.'}
                             </p>
                         )}
                         <Can action={'database.create'}>
