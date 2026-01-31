@@ -53,7 +53,8 @@ const SteamDiskSpaceFeature = () => {
                         <h2 css={tw`text-2xl mb-4 text-neutral-100 `}>Espaço em disco insuficiente...</h2>
                     </div>
                     <p css={tw`mt-4`}>
-                        Este servidor ficou sem espaço em disco disponível e não pode concluir o processo de instalação ou atualização.
+                        Este servidor ficou sem espaço em disco disponível e não pode concluir o processo de instalação
+                        ou atualização.
                     </p>
                     <p css={tw`mt-4`}>
                         Certifique-se de que a máquina tenha espaço em disco suficiente digitando{' '}
@@ -72,8 +73,9 @@ const SteamDiskSpaceFeature = () => {
                         <h2 css={tw`text-2xl mb-4 text-neutral-100`}>Espaço em disco insuficiente...</h2>
                     </div>
                     <p css={tw`mt-4`}>
-                        Este servidor ficou sem espaço em disco disponível e não consegue concluir o processo de instalação ou atualização.
-                        Entre em contato com o(s) administrador(es) e informe-os sobre problemas de espaço em disco.
+                        Este servidor ficou sem espaço em disco disponível e não consegue concluir o processo de
+                        instalação ou atualização. Entre em contato com o(s) administrador(es) e informe-os sobre
+                        problemas de espaço em disco.
                     </p>
                     <div css={tw`mt-8 sm:flex items-center justify-end`}>
                         <Button onClick={() => setVisible(false)} css={tw`w-full sm:w-auto border-transparent`}>
