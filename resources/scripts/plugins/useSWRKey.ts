@@ -11,7 +11,7 @@ function useSWRKey(context: Context, prefix: string | null = null): string {
     }, [context]);
 
     if (!key.trim().length) {
-        throw new Error('Must provide a valid context key to "useSWRKey".');
+        throw new Error('É necessário fornecer uma chave de contexto válida para "useSWRKey".');
     }
 
     return `swr::${prefix ? `${prefix}:` : ''}${key.trim()}`;
