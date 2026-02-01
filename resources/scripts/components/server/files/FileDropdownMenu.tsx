@@ -169,7 +169,7 @@ const FileDropdownMenu = ({ file }: { file: FileObject }) => {
                 <Can action={'file.update'}>
                     <Row onClick={() => setModal('rename')} icon={faPencilAlt} title={'Renomear'} />
                     <Row onClick={() => setModal('move')} icon={faLevelUpAlt} title={'Mover'} />
-                    <Row onClick={() => setModal('chmod')} icon={faFileCode} title={'Permisões'} />
+                    <Row onClick={() => setModal('chmod')} icon={faFileCode} title={'Permissões'} />
                 </Can>
                 {file.isFile && (
                     <Can action={'file.create'}>
@@ -187,7 +187,7 @@ const FileDropdownMenu = ({ file }: { file: FileObject }) => {
                 )}
                 {file.isFile && <Row onClick={doDownload} icon={faFileDownload} title={'Baixar'} />}
                 <Can action={'file.delete'}>
-                    <Row onClick={() => setShowConfirmation(true)} icon={faTrashAlt} title={'Deletar'} $danger />
+                    <Row onClick={() => setShowConfirmation(true)} icon={faTrashAlt} title={'Excluir'} $danger />
                 </Can>
             </DropdownMenu>
         </>

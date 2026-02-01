@@ -122,7 +122,7 @@ export default ({ backup }: Props) => {
             <Dialog.Confirm
                 open={modal === 'unlock'}
                 onClose={() => setModal('')}
-                title={`Unlock "${backup.name}"`}
+                title={`Desbloquear "${backup.name}"`}
                 onConfirmed={onLockToggle}
             >
                 Este backup deixará de estar protegido contra exclusões automáticas ou acidentais.
@@ -130,7 +130,7 @@ export default ({ backup }: Props) => {
             <Dialog.Confirm
                 open={modal === 'restore'}
                 onClose={() => setModal('')}
-                confirm={'Restore'}
+                confirm={'Restaurar'}
                 title={`Restore "${backup.name}"`}
                 onConfirmed={() => doRestorationAction()}
             >
@@ -148,12 +148,12 @@ export default ({ backup }: Props) => {
                             checked={truncate}
                             onChange={() => setTruncate((s) => !s)}
                         />
-                        Deletar todos os arquivos antes de restaurar o backup.
+                        Ecluir todos os arquivos antes de restaurar o backup.
                     </label>
                 </p>
             </Dialog.Confirm>
             <Dialog.Confirm
-                title={`Delete "${backup.name}"`}
+                title={`Excluir "${backup.name}"`}
                 confirm={'Continue'}
                 open={modal === 'delete'}
                 onClose={() => setModal('')}
@@ -177,7 +177,7 @@ export default ({ backup }: Props) => {
                         <Can action={'backup.download'}>
                             <DropdownButtonRow onClick={doDownload}>
                                 <FontAwesomeIcon fixedWidth icon={faCloudDownloadAlt} css={tw`text-xs`} />
-                                <span css={tw`ml-2`}>Download</span>
+                                <span css={tw`ml-2`}>Baixar</span>
                             </DropdownButtonRow>
                         </Can>
                         <Can action={'backup.restore'}>
@@ -194,12 +194,12 @@ export default ({ backup }: Props) => {
                                         icon={backup.isLocked ? faUnlock : faLock}
                                         css={tw`text-xs mr-2`}
                                     />
-                                    {backup.isLocked ? 'Unlock' : 'Lock'}
+                                    {backup.isLocked ? 'Desbloquear' : 'Bloquear'}
                                 </DropdownButtonRow>
                                 {!backup.isLocked && (
                                     <DropdownButtonRow danger onClick={() => setModal('delete')}>
                                         <FontAwesomeIcon fixedWidth icon={faTrashAlt} css={tw`text-xs`} />
-                                        <span css={tw`ml-2`}>Deletar</span>
+                                        <span css={tw`ml-2`}>Excluir</span>
                                     </DropdownButtonRow>
                                 )}
                             </>
