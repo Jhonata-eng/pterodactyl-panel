@@ -40,8 +40,8 @@ export default () => {
         <TitledGreyBox title={'Reinstalar servidor'} css={tw`relative`}>
             <Dialog.Confirm
                 open={modalVisible}
-                title={'Confirme a reinstalação do servidor.'}
-                confirm={'Sim, reinstale o servidor.'}
+                title={'Confirme a reinstalação do servidor'}
+                confirm={'Sim, reinstale o servidor'}
                 onClose={() => setModalVisible(false)}
                 onConfirmed={reinstall}
             >

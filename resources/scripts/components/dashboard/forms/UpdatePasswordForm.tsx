@@ -80,7 +80,7 @@ export default () => {
                                 />
                             </div>
                             <div css={tw`mt-6`}>
-                                <Button disabled={isSubmitting || !isValid}>Update Password</Button>
+                                <Button disabled={isSubmitting || !isValid}>Atualizar senha</Button>
                             </div>
                         </Form>
                     </React.Fragment>

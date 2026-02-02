@@ -48,11 +48,11 @@ export default () => {
                 <ContentBox title={'Criar chave API'} css={tw`flex-none w-full md:w-1/2`}>
                     <CreateApiKeyForm onKeyCreated={(key) => setKeys((s) => [...s!, key])} />
                 </ContentBox>
-                <ContentBox title={'API Keys'} css={tw`flex-1 overflow-hidden mt-8 md:mt-0 md:ml-8`}>
+                <ContentBox title={'Chaves API'} css={tw`flex-1 overflow-hidden mt-8 md:mt-0 md:ml-8`}>
                     <SpinnerOverlay visible={loading} />
                     <Dialog.Confirm
-                        title={'Delete API Key'}
-                        confirm={'Delete Key'}
+                        title={'Excluir chave API'}
+                        confirm={'Deletar chave'}
                         open={!!deleteIdentifier}
                         onClose={() => setDeleteIdentifier('')}
                         onConfirmed={() => doDeletion(deleteIdentifier)}
@@ -61,7 +61,7 @@ export default () => {
                     </Dialog.Confirm>
                     {keys.length === 0 ? (
                         <p css={tw`text-center text-sm`}>
-                            {loading ? 'Loading...' : 'Não existem chaves API cadastradas nessa conta.'}
+                            {loading ? 'Carregando...' : 'Não existem chaves API cadastradas nessa conta.'}
                         </p>
                     ) : (
                         keys.map((key, index) => (
