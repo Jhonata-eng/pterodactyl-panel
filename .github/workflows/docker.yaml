@@ -4,9 +4,9 @@ on:
   push:
     branches:
       - 1.0-develop
-  release:
-    types:
-      - published
+#  release:
+#    types:
+#      - published
 
 jobs:
   push:
